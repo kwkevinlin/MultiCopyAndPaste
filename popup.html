@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<title>Multi Copy and Past</title>
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/popup.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+		body {
+			background-color: #eee;
+		}
+		p {
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 200;
+			font-size: 14px;
+		}
+		.dropdown-menu {
+			left: 50%;
+			right: auto;
+			text-align: center;
+			transform: translate(-50%, 0);
+			background-color: #eee;
+		}
+	</style>
+</head>
+<body>
+	<div align="center" style="width:460px; height: 310px;"> <!-- 225 225 -->
+		<h1 style="margin-bottom: 15px; border-bottom: 5px solid #57c4d0; display: inline-block; width:85%">Multi Copy and Paste</h1>
+		<div class="container-fluid">
+			<div class="row" style="margin: 0 auto; text-align: left;">
+			<!-- http://stackoverflow.com/questions/1774477/centre-aligned-div-that-has-text-aligned-to-the-left -->
+				<div class="col-xs-12">
+					<div class="mainColumn">
+						<label>First Copy</label>
+						<input type="text" class="form-control" id="first_copy">
+					</div>
+				</div>
+
+				<div class="col-xs-12" style="margin-top: 10px">
+					<div class="mainColumn">
+						<label>Second Copy</label>
+						<input type="text" class="form-control" id="second_copy">
+					</div>
+				</div>
+				<div class="col-xs-12" style="margin-top: 10px">
+					<div class="mainColumn">
+						<label>Third Copy</label>
+						<input type="text" class="form-control" id="third_copy">
+					</div>
+				</div>
+			</div> <!-- row div -->
+		</div> <!-- container div -->
+
+	</div> <!-- center align div -->
+
+</body>
+</html>
+
+<!-- Output links to new tab? -->
