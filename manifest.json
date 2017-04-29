@@ -1,0 +1,22 @@
+{
+  "name": "Multi-Copy and Paste",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Need a bigger clipboard? Look no more! Use Multi-Copy and Paste to hold up to 10 items in your clipboard.",
+  "homepage_url": "http://linkevin.me",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "icons/icon19.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/jquery-2.1.4.min.js", "js/content_script.js"]
+    }
+  ]
+}
