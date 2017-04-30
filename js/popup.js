@@ -1,12 +1,16 @@
-//"Options" page, instead of using options.html
+// popup.js
 
 $(document).ready(function() {
+	// Load stored clipboard values from localStorage if available
+	$("#clipboard_1").val(localStorage.getItem("clipboard_1"));
+	$("#clipboard_2").val(localStorage.getItem("clipboard_2"));
+	$("#clipboard_3").val(localStorage.getItem("clipboard_3"));
 
-	console.log("Adding event listener");
-
+	// Save clipboard values on click
 	$("body").on("click", function() {
-		console.log("Clicked!");
-		// TODO: Save clipboard texts to localStorage
+		localStorage.setItem("clipboard_1", $("#clipboard_1").val());
+		localStorage.setItem("clipboard_2", $("#clipboard_2").val());
+		localStorage.setItem("clipboard_3", $("#clipboard_3").val());
 	});
-
 });
+
