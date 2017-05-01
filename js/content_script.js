@@ -9,8 +9,8 @@ $(document).ready(function() {
         //
         // Current conditionals:
         // CTRL + U -> clipboard 1
-        // CTRL + J -> clipboard 2
-        // CTRL + K -> clipboard 3
+        // CTRL + I -> clipboard 2
+        // CTRL + J -> clipboard 3
         //
         // Key codes:
         // CMD = 91
