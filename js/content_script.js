@@ -1,27 +1,41 @@
-//When Document Ready
+// On DOM ready
 $(document).ready(function() {
-    console.log("Content Script loaded");
-
-    // TODO: Strenghten logic on cmd + v + 1/2/3 pasting
-    // Ie. Catch paste, catch cmd + 1, or incorporate catching in key capture conditionals below
-    $(document).bind('paste', function(evt) {
-        console.log('Overriding pasting function!');
-        evt.preventDefault();
-    });
-
-    var map = {}; // You could also use an array
+    var key = {}; // You could also use an array
     onkeydown = onkeyup = function(evt){
-        map[evt.keyCode] = evt.type == 'keydown';
+        key[evt.keyCode] = evt.type == 'keydown';
     
-        // Key capture conditionals
-        // cmd = 91
-        // v = 86
-        // ctrl = 17
-        if (map[91] && map[86]){  // CMD + V
-            console.log('Command V');
-            if (document.activeElement.id == "first_name") {  // Testing safeguard
-                document.activeElement.value = "test";
-            }
+        // TODO: Replace current hotkeys with ctrl/cmd + v + 1/2/3
+        // Will require evt.preventDefault() for "paste" and ctrl/cmd + 1/2/3 (tabs switching)
+        //
+        // Current conditionals:
+        // CTRL + U -> clipboard 1
+        // CTRL + J -> clipboard 2
+        // CTRL + K -> clipboard 3
+        //
+        // Key codes:
+        // CMD = 91
+        // CTRL = 17
+        // U = 85
+        // J = 74
+        // I = 75
+        // V = 86
+        if (key[17] && key[85]) {  // Ctrl + U
+            chrome.storage.sync.get("clipboard_1", function(obj) {
+                console.log("Ctrl U: " + obj.clipboard_1);
+                document.activeElement.value = obj.clipboard_1;
+            });
+        }
+        else if (key[17] && key[74]) {  // Ctrl + J
+            chrome.storage.sync.get("clipboard_2", function(obj) {
+                console.log("Ctrl J: " + obj.clipboard_2);
+                document.activeElement.value = obj.clipboard_2;
+            });
+        }
+        else if (key[17] && key[75]) {  // Ctrl + I
+            chrome.storage.sync.get("clipboard_3", function(obj) {
+                console.log("Ctrl I: " + obj.clipboard_3);
+                document.activeElement.value = obj.clipboard_3;
+            });
         }
     };
 
